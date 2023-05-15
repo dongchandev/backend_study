@@ -58,7 +58,7 @@ public class MemberController {
 
         return "redirect:/";
     }
-    @GetMapping("/members")
+    @GetMapping(value ="/members")
     public String list(Model model){
         List<Member> members = memberService.findMembers();
         model.addAttribute("members",members);
@@ -67,4 +67,5 @@ public class MemberController {
     }
     //memory에 있어서 서버를 내리면 데이터가 사라짐
     //->데이터를 파일/DB에 저장해야함
+
 }

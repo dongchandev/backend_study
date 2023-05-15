@@ -56,6 +56,6 @@ public class HelloController {
         public void setName(String name){
             this.name=name;
         }
-        //매개 변수와 객체 자신이 가지고 있는 변수의 이름이 같은 겨우 이를 구분하기 위해 this를 사용
+        //매개 변수와 객체 자신이 가지고 있는 변수의 이름이 같은 경우 이를 구분하기 위해 this를 사용
     }
 }
