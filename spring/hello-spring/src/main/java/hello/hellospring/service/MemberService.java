@@ -5,12 +5,14 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 
 //스프링이 올라올 때 스프링 컨테이너에 이 애노테이션의 프로그램을 올려줌
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
