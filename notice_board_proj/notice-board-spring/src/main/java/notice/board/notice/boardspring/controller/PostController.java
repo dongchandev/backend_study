@@ -24,7 +24,7 @@ public class PostController {
             @RequestParam String title,
             @RequestParam String content,
             @RequestParam String author
-    ) {
+    ){
         Post post = new Post();
         post.setTitle(title);
         post.setContent(content);
@@ -36,7 +36,6 @@ public class PostController {
     public String list(Model model){
         List<Post> posts = postService.getAllPosts();
         model.addAttribute("posts",posts);
-        //"members"키를 통해 members를 리스트형태로 넣어둠
         return "post-list";
     }
     @GetMapping("/posts/{id}")
@@ -47,7 +46,7 @@ public class PostController {
             model.addAttribute("post", post);
             return "post-view";
         } else {
-            return "error"; // 적절한 에러 페이지로 이동
+            return "login-form"; // 적절한 에러 페이지로 이동
         }
     }
 }

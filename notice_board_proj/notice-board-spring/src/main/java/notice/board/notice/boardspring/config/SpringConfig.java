@@ -1,4 +1,4 @@
-package notice.board.notice.boardspring;
+package notice.board.notice.boardspring.config;
 
 import jakarta.persistence.EntityManager;
 import notice.board.notice.boardspring.repository.PostRepository;

@@ -5,12 +5,22 @@
 </head>
 <body>
 <h1>회원가입</h1>
-<form action="/register" method="post" th:object="${member}">
-    <label>사용자 이름:</label>
-    <input type="text" th:field="*{membername}" /><br/>
-    <label>비밀번호:</label>
-    <input type="password" th:field="*{password}" /><br/>
-    <input type="submit" value="가입하기" />
+<form action="/register" method="post">
+    <div>
+        <label>ID</label>
+        <input type="text" id="id" name="id" placeholder="ID를 입력하세요">
+    </div>
+    <div>
+        <label>PASSWORD</label>
+        <input type="text" id="pw" name="pw" placeholder="비밀번호를 입력하세요">
+    </div>
+    <div>
+        <label>NAME</label>
+        <input type="text" id="name" name="name" placeholder="사용자이름을 입력하세요">
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
 </form>
 </body>
 </html>

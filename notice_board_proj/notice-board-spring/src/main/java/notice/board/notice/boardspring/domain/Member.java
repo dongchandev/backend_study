@@ -1,24 +1,34 @@
 package notice.board.notice.boardspring.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-@Entity
-@Data
+@Builder
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
+@Entity
+@EntityListeners(AuditingEntityListener.class)
+@Table(name="member")
+
 public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
-    private Long id;
-    @Column(nullable = false)
-    private Long pw;
-    @Column(nullable = false)
+    @Column(name="member_id", nullable = false)
+    private Long memberId;
+    @Column(name="user_id", nullable = false)
+    private String userId;
+    @Column(name="pw",nullable = false)
+    private String pw;
+    @Column(name="name",nullable = false)
     private String name;
+
+    public Member(MemberForm memberForm) {
+        this.userId = memberForm.getId();
+        this.pw = memberForm.getPw();
+        this.name = memberForm.getName();
+    }
 }
