@@ -1,4 +1,4 @@
-package notice.board.notice.boardspring.jwt;
+package notice.board.notice.boardspring.user.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 @Data
 @AllArgsConstructor
-public class JwtToken {
+public class TokenInfo {
 
     private String grantType;
     private String accessToken;
